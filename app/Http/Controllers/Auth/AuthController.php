@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\AccType;
 
 class AuthController extends Controller
 {
@@ -43,8 +44,9 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'acctypes_id' =>'required',
         ]);
     }
 
@@ -58,8 +60,11 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => bcrypt($data['password']),
+            'acctypes_id' => $data['acctypes_id'],
         ]);
     }
+    protected $loginPath = '/';
+    protected $redirectPath = 'dashboard';
 }

@@ -9,10 +9,17 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
+
     @yield('stylesheets')
   </head>
   <body>
+    @if(auth()->check())
+        <!-- Navigation bar -->
+        @include('layout.partials.navigation')
+        <!-- end navigation bar -->
+    @endif
     <div class="container">
       @yield('contents')
     </div>
@@ -21,6 +28,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    {{-- login script --}}
+    <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
     @yield('scripts')
   </body>
 </html>
