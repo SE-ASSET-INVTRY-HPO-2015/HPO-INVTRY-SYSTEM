@@ -19,7 +19,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="/create">Create Asset</a></li>
             <li class="divider"></li>
-            <li><a href="/auth/logout">View All</a></li>
+            <li><a href="#">View All</a></li>
           </ul>
         </li>
         {{-- Deployment Module --}}
@@ -28,7 +28,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Create Deployment</a></li>
             <li class="divider"></li>
-            <li><a href="/auth/logout">View Deployed Asset</a></li>
+            <li><a href="#">View Deployed Asset</a></li>
           </ul>
         </li>
 

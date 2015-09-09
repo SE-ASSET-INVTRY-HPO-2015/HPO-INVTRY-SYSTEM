@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function(){
 	get('editPassword/{id}', 'DashboardController@editPassword');
 	post('updatePassword/{id}', 'DashboardController@updatePassword');
 	get('auth/logout', 'Auth\AuthController@getLogout');
-	Route::group(['middleware' => 'admin'], function(){
-		get('/create', 'AssetController@index');
+	Route::group(['middleware' => 'administrator'], function(){
+		get('/create', 'DashboardController@create');
 	});
 });
