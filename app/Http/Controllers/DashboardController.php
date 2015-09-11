@@ -10,6 +10,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
 use Flash;
+use App\Brand;
+use App\Category;
+use App\Physicalstatus;
+use App\Warranty;
+use App\Asset;
 
 class DashboardController extends Controller
 {
@@ -37,7 +42,12 @@ class DashboardController extends Controller
 
     public function create()
     {
-        return view('dashboard.create');
+        // $datas=Asset::all();
+        $brands=Brand::all();
+        $categories=Category::all();
+        $physicalstatuses=Physicalstatus::all();
+        $warranties=Warranty::all();
+        return view('dashboard.create', compact('brands', 'categories', 'physicalstatuses', 'warranties'));
     }
 
 
@@ -73,13 +83,13 @@ class DashboardController extends Controller
      */
     public function editUsername($id)
     {
-        $datas=User::all();
+        $datas=User::find($id);
         return view('dashboard.edit-username', compact('datas'));
     }
 
     public function editPassword($id)
     {
-        $datas=User::all();
+        $datas=User::find($id);
         return view('dashboard.edit-password', compact('datas'));
     }
 

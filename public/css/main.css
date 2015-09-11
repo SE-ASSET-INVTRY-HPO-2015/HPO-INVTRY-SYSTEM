@@ -1,5 +1,9 @@
-body{
-    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
+body {
+  font-family: 'Varela Round';
+  font-size: 12px;
+  line-height: 1.66667;
+  font-weight: 400;
+  letter-spacing: normal;
+  background-color: #f9f9f9;
+  color: #666;
 }

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdministratorMiddleware
+class MustBeAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,11 @@ class AdministratorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->isAdmin()){
+        if(auth()->check() && auth()->user()->acctypes_id == 1){
             return $next($request);
         }
-        return redirect()->back();
+
+        flash()->error('Oops! You are not logged as Administrator.');
+        return back()->withInput();
     }
 }

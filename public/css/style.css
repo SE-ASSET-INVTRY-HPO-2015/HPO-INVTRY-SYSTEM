@@ -1,6 +1,12 @@
 body {
-        background-color: #f2f2f2;
         background: url(http://www.wallpaper4me.com/images/wallpapers/systemidle%20copy-701350.jpeg);
+        font-family: 'Varela Round';
+        font-size: 12px;
+        line-height: 1.66667;
+        font-weight: 400;
+        letter-spacing: normal;
+        background-color: #f9f9f9;
+        color: #666;
         
     }
     .form-signin input[type="text"] {

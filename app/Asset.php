@@ -23,10 +23,10 @@ class Asset extends Model
         return $this->belongsTo('App\Physicalstatus');
     }
 
-    public function deployments()
-    {
-    	return $this->belongsTo('App\Deployment');
-    }
+    // public function deployments()
+    // {
+    // 	return $this->belongsTo('App\Deployment');
+    // }
 
     public function warranties()
     {

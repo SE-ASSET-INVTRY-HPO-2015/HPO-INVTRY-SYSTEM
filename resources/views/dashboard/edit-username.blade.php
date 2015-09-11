@@ -8,8 +8,7 @@
 			    <h3 class="panel-title">Change Username</h3>
 			  </div>
 			  <div class="panel-body">
-			   @foreach($datas as $data)
-			    <form action="/updateUsername/{{ $data->id }}" method="POST">
+			    <form action="/updateUsername/{{ $datas->id }}" method="POST">
 			    	{!! csrf_field() !!}
 			    	<div class="form-group has-success">
 					  <label class="control-label" for="inputSuccess">Username</label>
@@ -17,7 +16,6 @@
 					</div>
 					<button type="submit" class="btn btn-sm btn-primary">Submit</button>
 			    </form>
-			    @endforeach
 			  </div>
 			</div>
 		</div>

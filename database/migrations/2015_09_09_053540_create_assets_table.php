@@ -21,7 +21,7 @@ class CreateAssetsTable extends Migration
             $table->integer('control_number');
             $table->integer('serial_number');
             $table->integer('physicalstatuses_id')->unsigned()->index();
-            $table->integer('deployments_id')->unsigned()->index();
+            // $table->integer('deployments_id')->unsigned()->index();
             $table->integer('warranties_id')->unsigned()->index();
             $table->timestamp('warranty_end');
             $table->timestamps();
@@ -41,10 +41,10 @@ class CreateAssetsTable extends Migration
                   ->on('physicalstatuses')
                   ->onDelete('cascade');
 
-            $table->foreign('deployments_id')
-                  ->references('id')
-                  ->on('deployments')
-                  ->onDelete('cascade');
+            // $table->foreign('deployments_id')
+            //       ->references('id')
+            //       ->on('deployments')
+            //       ->onDelete('cascade');
 
             $table->foreign('warranties_id')
                   ->references('id')
